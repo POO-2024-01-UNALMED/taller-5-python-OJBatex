@@ -1,10 +1,10 @@
 from gestion import Zona
 from gestion import Zoologico
-import Anfibio
-import Ave
-import Mamifero
-import Pez
-import Reptil
+from anfibio import Anfibio
+from ave import Ave
+from mamifero import Mamifero
+from pez import Pez
+from reptil import Reptil
 
 class Animal:
     _totalAnimales = 0

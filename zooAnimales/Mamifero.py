@@ -1,4 +1,4 @@
-import Animal
+from animal import Animal
 
 class Mamifero(Animal):
     _listado = []
