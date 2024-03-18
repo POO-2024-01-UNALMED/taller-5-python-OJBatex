@@ -1,19 +1,19 @@
-from zona import Zona
+class Zoologico():
+    _zonas = []
 
-class Zoologico:
     def __init__(self, nombre, ubicacion):
         self._nombre = nombre
         self._ubicacion = ubicacion
-        self._zonas = []
 
-    def cantidadTotalAnimales(self):
-        cantAnimales = 0
-        for i in range (len(self._zonas)):
-            cantAnimales += self._zonas[i].cantidadAnimales()
-        return cantAnimales
-    
     def agregarZonas(self, zona):
         self._zonas.append(zona)
+    
+    def cantidadTotalAnimales(self):
+        c = 0
+        for zona in self._zonas:
+            c += zona.cantidadAnimales()
+
+        return c
 
     def getNombre(self):
         return self._nombre
@@ -24,11 +24,13 @@ class Zoologico:
     def getUbicacion(self):
         return self._ubicacion
     
-    def setUbicacion(self, ubi):
-        self._ubicacion = ubi
+    def setUbicacion(self, ubicacion):
+        self._ubicacion = ubicacion
 
-    def getZona(self):
-        return self._zonas
+    @classmethod
+    def getZona(cls):
+        return cls._zonas
     
-    def setZona(self, zona):
-        self._zonas = zona
+    @classmethod
+    def setZona(cls, zonas):
+        cls._zonas = zonas
